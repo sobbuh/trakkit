@@ -10,6 +10,7 @@ import Cohorts from './components/Cohorts'
 import Record from './components/Record'
 import { white, backgroundColor, teal } from './utils/colors'
 import EntryDetail from './components/EntryDetail'
+import reducer from './reducers'
 
 function TrakkitStatusBar ({backgroundColor, ...props}) {
   return (
