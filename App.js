@@ -11,6 +11,8 @@ import Record from './components/Record'
 import { white, backgroundColor, teal } from './utils/colors'
 import EntryDetail from './components/EntryDetail'
 import reducer from './reducers'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import { Constants } from 'expo'
 
 function TrakkitStatusBar ({backgroundColor, ...props}) {
   return (
@@ -25,28 +27,28 @@ const Tabs = TabNavigator({
     screen: Feed,
     navigationOptions: {
       tabBarLabel: 'Feed',
-      tabBarIcon: ({ tintColor }) => <Ionicons name='ion-ios-list' size={30} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Ionicons name='ios-list' size={30} color={tintColor} />
     }
   },
   History: {
     screen: Cohorts,
     navigationOptions: {
       tabBarLabel: 'Cohorts',
-      tabBarIcon: ({ tintColor }) => <Ionicons name='ion-ios-people' size={30} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Ionicons name='ios-people' size={30} color={tintColor} />
     },
   },
   Record: {
     screen: Record,
     navigationOptions: {
       tabBarLabel: 'Record',
-      tabBarIcon: ({ tintColor }) => <FontAwesome name='ion-android-radio-button-on' size={30} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Ionicons name='radio-button-on' size={30} color={tintColor} />
     },
   },
   Explore: {
     screen: Explore,
     navigationOptions: {
       tabBarLabel: 'Explore',
-      tabBarIcon: ({ tintColor }) => <Ionicons name='ion-compass' size={30} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Ionicons name='ios-compass' size={30} color={tintColor} />
     }
   },
   Profile: {
@@ -96,7 +98,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={{flex: 1}}>
-          <TrakkitStatusBar backgroundColor={backgroundColor} barStyle="light-content" />
+          <TrakkitStatusBar backgroundColor={backgroundColor} barStyle="dark-content" />
           <MainNavigator />
         </View>
       </Provider>
