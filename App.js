@@ -41,7 +41,7 @@ const Tabs = TabNavigator({
     screen: Record,
     navigationOptions: {
       tabBarLabel: 'Record',
-      tabBarIcon: ({ tintColor }) => <Ionicons name='radio-button-on' size={30} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Ionicons name='md-radio-button-on' size={30} color={tintColor} />
     },
   },
   Explore: {
