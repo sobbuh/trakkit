@@ -2,11 +2,14 @@ import React from 'react';
 import { View, Platform, StatusBar } from 'react-native';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { TabNavigator, StackNavigator } from 'react-navigation'
 import Feed from './components/Feed'
 import Profile from './components/Profile'
 import Explore from './components/Explore'
 import Cohorts from './components/Cohorts'
 import Record from './components/Record'
+import { white, backgroundColor } from './utils/colors'
+import EntryDetail from './components/EntryDetail'
 
 function TrakkitStatusBar ({backgroundColor, ...props}) {
   return (

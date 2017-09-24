@@ -6,7 +6,7 @@ class Record extends Component {
   render(){
     return (
       <View>
-        <Texs Record</Text>
+        <Text> Record</Text>
       </View>
     )
   }
