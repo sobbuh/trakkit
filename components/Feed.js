@@ -23,9 +23,9 @@ import {
 
 import styles from "./feed-styles";
 
-const pratik = require("../../../img/contacts/pratik.png");
-const sanket = require("../../../img/contacts/sanket.png");
-const megha = require("../../../img/contacts/megha.png");
+const pratik = require("../img/contacts/pratik.png");
+const sanket = require("../img/contacts/sanket.png");
+const megha = require("../img/contacts/megha.png");
 
 const datas = [
   {
@@ -48,9 +48,9 @@ const datas = [
   },
 ];
 
-const cardOne = require("../../img/meditation.png");
-const cardTwo = require("../../img/sleep.png");
-const cardThree = require("../../img/supplements.png");
+const cardOne = require("../img/meditation.png");
+const cardTwo = require("../img/sleep.png");
+const cardThree = require("../img/supplements.png");
 
 const cards = [
 	{
@@ -73,19 +73,10 @@ const cards = [
 
 class FeedPage extends Component {
 	// eslint-disable-line
-  state = {
-    newRatings: {
-      energy : 5.0,
-      mood : 5.0,
-      focus : 5.0,
-      productivity : 5.0
-    }
-  }
 
 	render() {
 		return (
       <Container style={styles.container}>
-				<StatusBar barStyle="light-content" />
 
         <Header>
           <Left />
@@ -96,31 +87,6 @@ class FeedPage extends Component {
         </Header>
 
         <Content>
-          <ListItem itemHeader first>
-            <Text>How are you feeling?</Text>
-          </ListItem>
-
-
-          <Text style={styles.ratingLabel}> Energy</Text>
-          <Text style={styles.rating}> {this.state.newRatings.energy}</Text>
-          <Slider style={styles.slider} maximumValue={10} value={this.state.newRatings.energy} minimumValue={0} step={1}
-            onValueChange= {(e) => this.setState({ newRatings: {
-            ...this.state.newRatings,
-            energy: e}})}/>
-
-          <Text style={styles.ratingLabel}> Focus</Text>
-          <Text style={styles.rating}> {this.state.newRatings.focus}</Text>
-          <Slider style={styles.slider} maximumValue={10} value={this.state.newRatings.focus} minimumValue={0} step={1}
-            onValueChange= {(e) => this.setState({ newRatings: {
-            ...this.state.newRatings,
-            focus: e}})}/>
-
-          <Text style={styles.ratingLabel}> Productivity </Text>
-          <Text style={styles.rating}> {this.state.newRatings.productivity}</Text>
-          <Slider style={styles.slider} maximumValue={10} value={this.state.newRatings.productivity} minimumValue={0} step={1}
-            onValueChange= {(e) => this.setState({ newRatings: {
-            ...this.state.newRatings,
-            productivity: e}})}/>
 
 
           <ListItem itemHeader >
