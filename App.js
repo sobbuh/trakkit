@@ -8,7 +8,7 @@ import Profile from './components/Profile'
 import Explore from './components/Explore'
 import Cohorts from './components/Cohorts'
 import Record from './components/Record'
-import { white, backgroundColor } from './utils/colors'
+import { white, backgroundColor, teal } from './utils/colors'
 import EntryDetail from './components/EntryDetail'
 
 function TrakkitStatusBar ({backgroundColor, ...props}) {
@@ -18,21 +18,6 @@ function TrakkitStatusBar ({backgroundColor, ...props}) {
     </View>
   )
 }
-
-const MainNavigator = StackNavigator({
-  Home: {
-    screen: Tabs,
-  },
-  EntryDetail: {
-    screen: EntryDetail,
-    navigationOptions: {
-      headerTintColor: white,
-      headerStyle: {
-        backgroundColor: backgroundColor,
-      }
-    }
-  }
-})
 
 const Tabs = TabNavigator({
   Feed: {
@@ -75,10 +60,10 @@ const Tabs = TabNavigator({
     header: null
   },
   tabBarOptions: {
-    activeTintColor: Platform.OS === 'ios' ? purple : white,
+    activeTintColor: Platform.OS === 'ios' ? teal : white,
     style: {
       height: 56,
-      backgroundColor: Platform.OS === 'ios' ? white : purple,
+      backgroundColor: Platform.OS === 'ios' ? white : teal,
       shadowColor: 'rgba(0, 0, 0, 0.24)',
       shadowOffset: {
         width: 0,
@@ -86,6 +71,21 @@ const Tabs = TabNavigator({
       },
       shadowRadius: 6,
       shadowOpacity: 1
+    }
+  }
+})
+
+const MainNavigator = StackNavigator({
+  Home: {
+    screen: Tabs,
+  },
+  EntryDetail: {
+    screen: EntryDetail,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: backgroundColor,
+      }
     }
   }
 })
@@ -102,12 +102,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
