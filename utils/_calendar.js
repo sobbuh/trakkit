@@ -1,7 +1,7 @@
 // Utilities for backfilling the calendar.
 
 import { AsyncStorage } from 'react-native'
-import { getMetricMetaInfo, timeToString } from './helpers'
+import { getMetricMetaInfo, timeToString, getStackMetaInfo } from './helpers'
 
 export const CALENDAR_STORAGE_KEY = 'UdaciFitness:calendar'
 
@@ -10,7 +10,9 @@ function getRandomNumber (max) {
 }
 
 function setDummyData () {
-  const { run, bike, swim, sleep, eat } = getMetricMetaInfo()
+  const { mood, energy, productivity, focus} = getMetricMetaInfo()
+  const { caffeineTheanine, creatine, fishOil} = getStackMetaInfo()
+
 
   let dummyData = {}
   const timestamp = Date.now()
@@ -20,11 +22,13 @@ function setDummyData () {
     const strTime = timeToString(time)
     dummyData[strTime] = getRandomNumber(3) % 2 === 0
       ? {
-          run: getRandomNumber(run.max),
-          bike: getRandomNumber(bike.max),
-          swim: getRandomNumber(swim.max),
-          sleep: getRandomNumber(sleep.max),
-          eat: getRandomNumber(eat.max),
+          mood: getRandomNumber(mood.max),
+          energy: getRandomNumber(energy.max),
+          productivity: getRandomNumber(productivity.max),
+          focus: getRandomNumber(focus.max),
+          caffeineTheanine: getRandomNumber(caffeineTheanine.max),
+          creatine: getRandomNumber(creatine.max),
+          fishOil: getRandomNumber(fishOil)
         }
       : null
   }

@@ -26,95 +26,29 @@ const styles = StyleSheet.create({
 
 export function getMetricMetaInfo (metric) {
   const info = {
-    run: {
-      displayName: 'Run',
-      max: 50,
-      unit: 'miles',
-      step: 1,
-      type: 'steppers',
-      getIcon() {
-        return (
-          <View style={[styles.iconContainer, {backgroundColor: red}]}>
-            <MaterialIcons
-              name='directions-run'
-              color={white}
-              size={35}
-            />
-          </View>
-        )
-      }
-    },
-    bike: {
-      displayName: 'Bike',
-      max: 100,
-      unit: 'miles',
-      step: 1,
-      type: 'steppers',
-      getIcon() {
-        return (
-          <View style={[styles.iconContainer, {backgroundColor: orange}]}>
-            <MaterialCommunityIcons
-              name='bike'
-              color={white}
-              size={32}
-            />
-          </View>
-        )
-      }
-    },
-    swim: {
-      displayName: 'Swim',
-      max: 9900,
-      unit: 'meters',
-      step: 100,
-      type: 'steppers',
-      getIcon() {
-        return (
-          <View style={[styles.iconContainer, {backgroundColor: blue}]}>
-            <MaterialCommunityIcons
-              name='swim'
-              color={white}
-              size={35}
-            />
-          </View>
-        )
-      }
-    },
-    sleep: {
-      displayName: 'Sleep',
-      max: 24,
-      unit: 'hours',
-      step: 1,
-      type: 'slider',
-      getIcon() {
-        return (
-          <View style={[styles.iconContainer, {backgroundColor: lightPurp}]}>
-            <FontAwesome
-              name='bed'
-              color={white}
-              size={30}
-            />
-          </View>
-        )
-      }
-    },
-    eat: {
-      displayName: 'Eat',
-      max: 10,
+    mood: {
+      displayName: 'Mood',
+      max: 10.0,
       unit: 'rating',
-      step: 1,
-      type: 'slider',
-      getIcon() {
-        return (
-          <View style={[styles.iconContainer, {backgroundColor: pink}]}>
-            <MaterialCommunityIcons
-              name='food'
-              color={white}
-              size={35}
-            />
-          </View>
-        )
-      }
+      step: 0.5,
+    },
+    energy: {
+      displayName: 'Energy',
+      max: 10.0,
+      unit: 'rating',
+      step: 0.5,
+    },
+    productivity: {
+      displayName: 'Productivity',
+      max: 10.0,
+      unit: 'rating',
+      step: 0.5,
+    },
+    focus: {
+      displayName: 'Focus',
+      max: 10.0,
+      unit: 'rating',
+      step: 0.5,
     },
   }
 
@@ -123,6 +57,29 @@ export function getMetricMetaInfo (metric) {
     : info[metric]
 }
 
+export function getStackMetaInfo (stack) {
+  const stackInfo = {
+    caffeineTheanine: {
+      displayName: 'Caffeine-Theanine',
+      max: 1,
+      step: 1,
+    },
+    creatine: {
+      displayName: 'Creatine',
+      max: 1,
+      step: 1,
+    },
+    fishOil: {
+      displayName: 'Fish Oil',
+      max: 1,
+      step: 1,
+    },
+  }
+
+  return typeof stack === 'undefined'
+    ? stackInfo
+    : stackInfo[stack]
+}
 
 export function isBetween (num, x, y) {
   if (num >= x && num <= y) {
