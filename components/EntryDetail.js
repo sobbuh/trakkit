@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { timeToString, getDailyReminderValue } from '../utils/helpers'
-import MetricCard from './MetricCard'
 import { white } from '../utils/helpers'
-import TextButton from './TextButton'
 import { addEntry } from '../actions'
 import { removeEntry } from '../utils/api'
 
@@ -35,10 +33,6 @@ class EntryDetail extends Component {
 
     return (
       <View style={styles.container}>
-        <MetricCard metrics={metrics} />
-        <TextButton style={{margin: 20}} onPress={this.reset}>
-          RESET
-        </TextButton>
       </View>
     )
   }
